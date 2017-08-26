@@ -53,6 +53,14 @@ Contributor(s):
         <!--C3P Connection configuration !-->
        
         <!--Model !-->
-        <mapping class="com.zaagelexpress.Model.Employee"/>
+        <mapping class="com.zaagelexpress.entitis.Contact"/>
+        <mapping class="com.zaagelexpress.entitis.Crowd"/>
+        <mapping class="com.zaagelexpress.entitis.Partner"/>
+        <mapping class="com.zaagelexpress.entitis.Branch"/>
+        <mapping class="com.zaagelexpress.entitis.Individual"/>
+        <mapping class="com.zaagelexpress.entitis.Zone"/>
+        <mapping class="com.zaagelexpress.entitis.Customer"/>
+        <mapping class="com.zaagelexpress.entitis.Order"/>
+        <mapping class="com.zaagelexpress.entitis.OrderHistory"/>
     </session-factory>
 </hibernate-configuration>
