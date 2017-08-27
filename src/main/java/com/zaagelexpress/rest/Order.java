@@ -9,6 +9,9 @@ package com.zaagelexpress.rest;
  *
  * @author saada1
  */
+
+import com.google.firebase.auth.FirebaseAuth;
+import com.zaagelexpress.utils.FireBaseConnection;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
@@ -17,14 +20,15 @@ import javax.ws.rs.core.Response;
 @Path("/order")
 public class Order {
 
-	@GET
-	@Path("/{param}")
-	public Response getMsg(@PathParam("param") String msg) {
+    @GET
+    @Path("/{param}")
+    public Response getMsg(@PathParam("param") String msg) {
 
-		String output = "Jersey say : " + msg;
+        FirebaseAuth zaagelXAuthApp= FireBaseConnection.getFirebaseAppInstance();
+        String output = "Jersey say : " + zaagelXAuthApp.getUser(msg).getResult().getEmail();
 
-		return Response.status(200).entity(output).build();
+        return Response.status(200).entity(output).build();
 
-	}
+    }
 
 }
